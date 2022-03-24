@@ -42,22 +42,24 @@ This is a web application based on machine/deep learning models for crop disease
 
 
 
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- USAGE  -->
 ## How to Use
 
-To use this application you need to follow this steps:
+To use this project you need to follow this steps:
 
 * Make sure python3 is installed if not you can get it [here](https://www.python.org/downloads/)
+
 * Install all the dependencies:
    ```sh
    pip install -r requirements.txt
    ```
 * Clone this repository:
    ```sh
-   git clone 
+   git clone https://github.com/Aymen1001/AgriGo.git
    cd AgriGo/AgriGo
    ```
 * And finally run this command:
@@ -68,6 +70,12 @@ To use this application you need to follow this steps:
 
 <!-- data -->
 ## Dataset
+
+The datasets used for this project are from kaggle:
+
+* [Crop Recommendation](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
+* [Fertilizer Recommendation](https://www.kaggle.com/datasets/gdabhishek/fertilizer-prediction)
+* [Crop Diseases images dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
 
    
 <p align="right">(<a href="#top">back to top</a>)</p>
