@@ -34,13 +34,22 @@ This is a web application based on machine/deep learning models for crop disease
 
 
 
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- Features -->
 ## Features
 
+![Capture d’écran 2022-03-23 à 23 57 42](https://user-images.githubusercontent.com/83681204/159989052-08ae92b6-015d-4c63-b9d5-9fcb0579caeb.png)
 
+<ul>
+  <li>Crop recommendation: </li>
+    By using the soil data such as: NPK ratios, moisture, temperature and amount of rainfall in the field region the model can recommend the best crop to grow
+  <li>Fertilizer recommendation: </li>
+    
+  <li>Crop diseases detection: </li>
+</ul>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -53,14 +62,15 @@ To use this project you need to follow this steps:
 
 * Make sure python3 is installed if not you can get it [here](https://www.python.org/downloads/)
 
-* Install all the dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
 * Clone this repository:
    ```sh
    git clone https://github.com/Aymen1001/AgriGo.git
    cd AgriGo/AgriGo
+   ```
+
+* Install all the dependencies:
+   ```sh
+   pip install -r requirements.txt
    ```
 * And finally run this command:
    ```sh
