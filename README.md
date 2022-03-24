@@ -19,23 +19,13 @@ This is a web application based on machine/deep learning models for crop disease
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#motivation">Motivation</a></li>
     <li><a href="#motivation">Features</a></li>
     <li><a href="#how-to-use">How to use</a></li>
-    <li><a href="#dataset">Dataset</a></li>
+    <li><a href="#dataset">Data used</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
-
-
-<!-- Motivation -->
-## Motivation
-
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- Features -->
