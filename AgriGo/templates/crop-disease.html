@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container pt-5">
+  <h1 class="text-center" style="color: #8CE17D;">Crop Disease Prediction</h1>
+  <p class="text-center pt-3">Our models provide you an easy,fast and efficient way to detect diseases in your plants.
+  </p>
+</div>
+<form action="{{ url_for('find_crop_disease')}}" method="POST" enctype="multipart/form-data"
+  style="margin-top: 30px; width: 80%; text-align: center; margin: auto">
+  <br>
+  <br>
+  <br>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <label>Choose a crop :</label>
+      <div class="col-md-4">
+
+        <select name="crop" class="form-control" required="required">
+          {% for crop in crops %}
+          <option type="text" value="{{crop}}" data-show=".{{crop}}">{{crop}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <br />
+    <div class="row d-flex justify-content-center">
+      <label>Upload your image : </label>
+      <div class="col-md-4 pt-2">
+
+        <input class="form-control" name="file" type="file" id="formFile" onchange="preview_image(event)"
+          required="required">
+
+      </div>
+
+    </div>
+    <img id="output-image" class="rounded mx-auto d-block" src="{{ url_for('send_file', filename=file_name)}}"
+      onerror="this.src='./static/images/upload.jpg'"
+      style="max-width: 500px; max-height: 450px; margin-top: 30px; margin-bottom: 2px" />
+    <p style="font-style: italic">{{ file_name }}</p>
+    <br>
+    <div class="row" style="text-align:center;">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-success" value="submit">predict</button>
+      </div>
+    </div>
+
+  </div>
+
+</form>
+<br>
+<br>
+<br>
+
+<script type="text/javascript">
+  function preview_image(event) {
+    var reader = new FileReader();
+    reader.onload = function () {
+      var output = document.getElementById('output-image')
+      output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+</script>
+<hr>
+
+{% endblock %}

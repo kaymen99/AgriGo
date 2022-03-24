@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Agri App</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="./static/css/main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@100&display=swap"
+		rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				<p>AgriGo</p>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav m-auto">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="/">Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">
+							Services
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="/crop-disease">Crop Diseases</a></li>
+							<li><a class="dropdown-item" href="/fertilizer-recommendation">Fertilizer recommendation</a>
+							</li>
+							<li><a class="dropdown-item" href="/crop-recommendation">Crop recommendation</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	{% block content %}
+	<section id="banner">
+		<div class="banner-text">
+			<h1>AgriGo</h1>
+			<p>Levrage AI power to grow your field to the maximum</p>
+			<div class="banner-btn">
+				<a href="#services"><span></span>Find Out</a>
+				<a href="#feature"><span></span>Read More</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="feature">
+		<div class="title-text">
+			<p>FEATURES</p>
+			<h1>WHY CHOOSE US</h1>
+		</div>
+		<div class="feature-box">
+			<div class="features">
+				<h1>Quick Diagnosis</h1>
+				<div class="features-desc">
+					<div class="feature-icon">
+						<i class="fa fa-bolt"></i>
+					</div>
+					<div class="feature-text">
+						<p>AI models make it possible to identify and treat crop diseases quickly and efficiently. </p>
+					</div>
+
+				</div>
+				<h1>Increase Yield</h1>
+				<div class="features-desc">
+					<div class="feature-icon">
+						<i class="fa fa-corn"></i>
+					</div>
+					<div class="feature-text">
+						<p>With our precise recommendations the farmer can easily maximize the yield of his fields. </p>
+					</div>
+
+				</div>
+				<h1>Reduce cost</h1>
+				<div class="features-desc">
+					<div class="feature-icon">
+						<i class="fa fa-dollar-sign"></i>
+					</div>
+					<div class="feature-text">
+						<p>There is no need for agricultural experts or advanced crop management tools thus reducing the
+							production cost. </p>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="features-img">
+				<img src="./static/images/features-bg.png">
+			</div>
+		</div>
+	</section>
+
+	<section id="services">
+		<div class="title-text">
+			<p>SERVICES</p>
+			<h1>WE PROVIDE</h1>
+		</div>
+		<div class="service-box">
+
+			<div class="single-service">
+				<div class="service-content">
+					<img src="./static/images/service-1.jpg">
+				</div>
+				<a href="/crop-recommendation" style="color: #000">
+					<h1>Crop Recommendation</h1>
+				</a>
+				<p>Analyzes soil and weather data to find the best suited crop. </p>
+			</div>
+
+			<div class="single-service">
+				<div class="service-content">
+					<img src="./static/images/service-3.jpg">
+
+				</div>
+				<a href="/fertilizer-recommendation" style="color: #000">
+					<h1>Fertilizer Recommendation</h1>
+				</a>
+				<p>Analyzes soil and crop type to find the best fertilizer for your crop. </p>
+			</div>
+
+			<div class="single-service">
+				<div class="service-content">
+					<img src="./static/images/service-2.jpg">
+
+				</div>
+				<a href="/crop-disease" style="color: #000">
+					<h1>Crop Disease Prediction</h1>
+				</a>
+				<p>From the images of your crops our models can check their health. </p>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="contact">
+		<div class="footer-title-text">
+			<h1>CONTACT ME</h1>
+		</div>
+		<div class="footer-row">
+			<div class="footer-left">
+				<h1>AgriGo</h1>
+				<p>Email: AymenMir1001@gmail.com</p>
+			</div>
+			<div class="footer-right">
+				<h1>AgriGo</h1>
+				<p>Github: <a href="https://github.com/Aymen1001"> <i class="fab fa-github"></i>Aymen1001 </a>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	{% endblock %}
+
+	<script type="text/javascript" src="./static/js/my.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+		integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+		integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

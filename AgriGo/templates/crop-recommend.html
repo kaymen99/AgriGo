@@ -1,0 +1,87 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container pt-5">
+  <h1 class="text-center" style="color: #8CE17D;">Crop Recommendation</h1>
+  <p class="text-center pt-3">Using your soil composition data and weather condtions we can predict the best type of
+    crop to sow</p>
+</div>
+<br>
+<br>
+<div class="container">
+
+
+  <div class="col-md-4 col-md-offset-4" style="float: right; margin-top: 5%; margin-right: 10%;margin-bottom: 5%;">
+    <img src="./static/images/upload-img.jpg" width="500" height="333">
+  </div>
+
+  <form action="/crop-recommendation" method="POST" style="margin-top: 5%">
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="N">Amount of Azote :</label>
+      <input class="form-control" type="number" min="0" required="required" name="N" ,
+        placeholder="enter amount of azote">
+
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="P">Amount of Phosphorous :</label>
+      <input class="form-control" type="number" min="0" id="P" name="P" required="required"
+        placeholder="enter amount of phosphore">
+
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="K">Amount of Potassium :</label>
+      <input class="form-control" type="number" min="0" id="K" name="K" required="required"
+        placeholder="enter amount of potassium">
+
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="temperature">Soil Temperature :</label>
+      <input class="form-control" type="number" min="0" step="any" id="temperature" name="temperature"
+        required="required" placeholder="Enter soil temperature">
+
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="humidity">Soil Humidity :</label>
+      <input class="form-control" type="number" min="0" step="any" id="humidity" name="humidity" required="required"
+        placeholder="enter soil humidity level">
+
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="phosphore">Soil Ph :</label>
+      <input class="form-control" type="number" min="0" step="any" id="phosphore" name="phosphore" required="required"
+        placeholder="enter soil ph">
+
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+
+      <label for="rainfall">Amount of RainFall :</label>
+      <input class="form-control" type="number" min="0" step="any" id="rainfall" name="rainfall" required="required"
+        placeholder="enter amout of rain recieved">
+
+    </div>
+    <br>
+
+
+    <div class="text-center" style="padding-top: 5%">
+      <button type="submit" class="btn btn-success" value="submit">predict</button>
+    </div>
+    <br>
+    <br>
+
+  </form>
+
+
+
+</div>
+
+
+<br>
+<br>
+
+{% endblock %}
