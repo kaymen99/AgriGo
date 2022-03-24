@@ -47,7 +47,10 @@ This is a web application based on machine/deep learning models for crop disease
   <li>Crop recommendation: </li>
     By using the soil data such as: NPK ratios, moisture, temperature and amount of rainfall in the field region the model can recommend the best crop to grow
   <li>Fertilizer recommendation: </li>
-    
+    With the given  
+  
+  ![fertilizer-page](https://user-images.githubusercontent.com/83681204/159990465-4486e9b7-6f81-4898-b1f8-f1e4f4f3e21c.png)
+
   <li>Crop diseases detection: </li>
 </ul>
 
