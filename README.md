@@ -48,7 +48,22 @@ This is a web application based on machine/deep learning models for crop disease
 <!-- USAGE  -->
 ## How to Use
 
-   
+To use this application you need to follow this steps:
+
+* Make sure python3 is installed if not you can get it [here](https://www.python.org/downloads/)
+* Install all the dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+* Clone this repository:
+   ```sh
+   git clone 
+   cd AgriGo/AgriGo
+   ```
+* And finally run this command:
+   ```sh
+   python app.py
+   ```   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- data -->
