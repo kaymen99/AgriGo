@@ -41,18 +41,28 @@ This is a web application based on machine/deep learning models for crop disease
 <!-- Features -->
 ## Features
 
-![Capture d’écran 2022-03-23 à 23 57 42](https://user-images.githubusercontent.com/83681204/159989052-08ae92b6-015d-4c63-b9d5-9fcb0579caeb.png)
+<div style="display:flex;align-items:center;">
+  <img src="https://user-images.githubusercontent.com/83681204/159989052-08ae92b6-015d-4c63-b9d5-9fcb0579caeb.png" width="700px" heigth="500px">
+</div>
 
+<br/>
 <ul>
-  <li>Crop recommendation: </li>
+  <li><b>Crop recommendation: </b></li>
     By using the soil data such as: NPK ratios, moisture, temperature and amount of rainfall in the field region the model can recommend the best crop to grow
-  <li>Fertilizer recommendation: </li>
-    With the given  
   
-  ![fertilizer-page](https://user-images.githubusercontent.com/83681204/159990465-4486e9b7-6f81-4898-b1f8-f1e4f4f3e21c.png)
+  <li></b>Fertilizer recommendation: </b></li>
+    With the given soil data(type, temparture, Ph,...) and NPK ratios and the crop type, the app allow the user to know the best fertilzer to use for ensuring the good health of crops and thus maximazing the global yield of the field
 
-  <li>Crop diseases detection: </li>
+  <li></b>Crop diseases detection: </b></li>
+    The user need to give the crop image and it's type and the image recognition models will predict if the plant is healthy or not
+  
 </ul>
+
+<div style="display:flex;align-items:center;">
+  <img src="https://user-images.githubusercontent.com/83681204/159993771-8b2404c5-224b-4cfe-8d36-5967f8619456.png" width="500px" heigth="300px">
+  
+  <img src="https://user-images.githubusercontent.com/83681204/159993931-a88f47ac-4121-492e-9c4f-db371d181d3b.png" width="500px" heigth="300px">
+</div>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
