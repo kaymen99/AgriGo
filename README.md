@@ -40,10 +40,10 @@ This is a web application based on machine/deep learning models for crop disease
   <li><b>Crop recommendation: </b></li>
     By using the soil data such as: NPK ratios, moisture, temperature and amount of rainfall in the field region the model can recommend the best crop to grow
   
-  <li></b>Fertilizer recommendation: </b></li>
+  <li><b>Fertilizer recommendation: </b></li>
     With the given soil data(type, temparture, Ph,...) and NPK ratios and the crop type, the app allow the user to know the best fertilzer to use for ensuring the good health of crops and thus maximazing the global yield of the field
 
-  <li></b>Crop diseases detection: </b></li>
+  <li><b>Crop diseases detection: </b></li>
     The user need to give the crop image and it's type and the image recognition models will predict if the plant is healthy or not.
   
 </ul>
