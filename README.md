@@ -49,12 +49,12 @@ This is a web application based on machine/deep learning models for crop disease
 </ul>
 
 <br/>
-
-<p align="center">
-  <img alt="Light" src="https://user-images.githubusercontent.com/83681204/159994252-6e44cd8e-4d20-4dcb-9e22-c0e35756fe1c.png" width="45%">
-&nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="Dark" src="https://user-images.githubusercontent.com/83681204/159994452-d6a14dc9-d94f-4beb-8778-6ecdfe48f453.png" width="45%">
-</p>
+<table>
+  <tr>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/83681204/159994252-6e44cd8e-4d20-4dcb-9e22-c0e35756fe1c.png"></td>
+    <td valign="top"><img src="https://user-images.githubusercontent.com/83681204/159994452-d6a14dc9-d94f-4beb-8778-6ecdfe48f453.png"></td>
+  </tr>
+ </table>
   
 </div>
 
