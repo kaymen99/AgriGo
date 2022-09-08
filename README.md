@@ -71,7 +71,7 @@ To use this project you need to follow this steps:
 
 * Clone this repository:
    ```sh
-   git clone https://github.com/Aymen1001/AgriGo.git
+   git clone https://github.com/kaymen99/AgriGo.git
    cd AgriGo/AgriGo
    ```
 
