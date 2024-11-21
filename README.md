@@ -2,115 +2,119 @@
 
 # AgriGo
 
-![Capture d’écran 2022-03-23 à 23 56 34](https://user-images.githubusercontent.com/83681204/159978827-fccf752e-2d36-4dc3-a15a-ce3a57e90165.png)
+![AgriGo Logo](https://user-images.githubusercontent.com/83681204/159978827-fccf752e-2d36-4dc3-a15a-ce3a57e90165.png)
 
-<!-- ABOUT THE PROJECT -->
+---
 
+## Introduction
 
-This is a web application based on machine/deep learning models for crop disease detection and fertilizer/crop recommendation
+Agriculture faces a host of challenges, from unpredictable weather conditions to soil degradation and plant diseases. These issues can reduce crop yields, increase costs, and impact food security. **AgriGo** is a web application designed to bridge the gap between modern agricultural practices and advanced technologies like machine learning and deep learning. By providing tools for crop disease detection, fertilizer recommendations, and crop selection advice, AgriGo empowers farmers to make data-driven decisions and optimize their farming processes.
 
-### Built With
+---
 
-* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
-* [Tensorflow](https://www.tensorflow.org)
-* [scikit-learn](https://scikit-learn.org/stable/)
-* [bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+## The Problem
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#motivation">Features</a></li>
-    <li><a href="#how-to-use">How to use</a></li>
-    <li><a href="#dataset">Data used</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#license">License</a></li>
-  </ol>
-</details>
+Farming is becoming increasingly complex due to:
+- **Limited access to expert advice** for small-scale farmers.
+- **Inefficiency in crop selection** based on soil and environmental conditions.
+- **Lack of knowledge about fertilizers** to use for specific soil and crop types.
+- **Crop diseases going undetected**, leading to reduced productivity.
 
+AgriGo addresses these challenges with an easy-to-use platform that integrates scientific analysis into daily agricultural practices.
 
-<!-- Features -->
+---
+
 ## Features
 
-<div style="display:flex;align-items:center;">
-  <img src="https://user-images.githubusercontent.com/83681204/159989052-08ae92b6-015d-4c63-b9d5-9fcb0579caeb.png" width="700px" heigth="500px">
-</div>
+![AgriGo Screenshot](https://user-images.githubusercontent.com/83681204/159989052-08ae92b6-015d-4c63-b9d5-9fcb0579caeb.png)
 
-<br/>
-<ul>
-  <li><b>Crop recommendation: </b></li>
-    By using the soil data such as: NPK ratios, moisture, temperature and amount of rainfall in the field region the model can recommend the best crop to grow
-  
-  <li><b>Fertilizer recommendation: </b></li>
-    With the given soil data(type, temparture, Ph,...) and NPK ratios and the crop type, the app allow the user to know the best fertilzer to use for ensuring the good health of crops and thus maximazing the global yield of the field
+### 1. Crop Recommendation  
+AgriGo analyzes soil properties like nitrogen, phosphorus, potassium (NPK) levels, moisture, temperature, and rainfall to suggest the most suitable crops for your farm. This ensures optimized crop selection tailored to your unique environmental conditions.
 
-  <li><b>Crop diseases detection: </b></li>
-    The user need to give the crop image and it's type and the image recognition models will predict if the plant is healthy or not.
-  
-</ul>
+### 2. Fertilizer Suggestions  
+Using data such as soil type, pH, temperature, and the selected crop, AgriGo provides precise fertilizer recommendations. These suggestions help maintain soil health, improve crop growth, and maximize overall yield efficiency.
 
-<br/>
-<table>
-  <tr>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/83681204/159994252-6e44cd8e-4d20-4dcb-9e22-c0e35756fe1c.png"></td>
-    <td valign="top"><img src="https://user-images.githubusercontent.com/83681204/159994452-d6a14dc9-d94f-4beb-8778-6ecdfe48f453.png"></td>
-  </tr>
- </table>
-  
-</div>
+### 3. Crop Disease Detection  
+With just an uploaded image of your crop, AgriGo’s AI-powered image recognition system identifies diseases and evaluates plant health. This allows for quick interventions to protect your crops and prevent widespread damage.
 
-<br/>
-<p align="right">(<a href="#top">back to top</a>)</p>
+![Disease Detection](https://user-images.githubusercontent.com/83681204/159994252-6e44cd8e-4d20-4dcb-9e22-c0e35756fe1c.png) 
 
+![Crop Recommendation](https://user-images.githubusercontent.com/83681204/159994452-d6a14dc9-d94f-4beb-8778-6ecdfe48f453.png)
 
-<!-- USAGE  -->
+---
+
 ## How to Use
 
-To use this project you need to follow this steps:
+### Clone the Repository
 
-* Make sure python3 is installed if not you can get it [here](https://www.python.org/downloads/)
+```bash
+git clone https://github.com/kaymen99/AgriGo.git
+cd AgriGo
+```
 
-* Clone this repository:
-   ```sh
-   git clone https://github.com/kaymen99/AgriGo.git
-   cd AgriGo/AgriGo
+### Run Locally with Python (v3.8)
+
+1. **Create and activate a virtual environment**:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-* Install all the dependencies:
-   ```sh
+2. **Install dependencies**:
+   ```bash
    pip install -r requirements.txt
    ```
-* And finally run this command:
-   ```sh
-   python app.py
-   ```   
-<p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- data -->
+3. **Start the server**:
+   ```bash
+   python app.py
+   ```
+
+Visit the app at [http://localhost:5000](http://localhost:5000).
+
+---
+
+### Run with Docker
+
+1. **Build the Docker image**:
+   ```bash
+   docker build -t agrigo-webapp .
+   ```
+
+2. **Run the container**:
+   ```bash
+   docker run -p 5000:5000 agrigo-webapp
+   ```
+
+Visit the app at [http://localhost:5000](http://localhost:5000).
+
+---
+
 ## Dataset
 
-The datasets used for this project are from kaggle:
+The datasets used for this project are sourced from Kaggle:
 
-* [Crop Recommendation](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
-* [Fertilizer Recommendation](https://www.kaggle.com/datasets/gdabhishek/fertilizer-prediction)
-* [Crop Diseases images dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
+- [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset)
+- [Fertilizer Recommendation Dataset](https://www.kaggle.com/datasets/gdabhishek/fertilizer-prediction)
+- [Crop Disease Image Dataset](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
 
-   
-<p align="right">(<a href="#top">back to top</a>)</p>
+---
 
+## Built With
 
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+- [TensorFlow](https://www.tensorflow.org)
+- [scikit-learn](https://scikit-learn.org/stable/)
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
-<!-- Contact -->
+---
+
 ## Contact
 
-If you have any question or problem running this project just contact me: aymenMir1001@gmail.com
+For questions or support, please contact me: [aymenMir1001@gmail.com](mailto:aymenMir1001@gmail.com)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+---
 
-
-<!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-

@@ -1,51 +1,58 @@
+import os
+import pickle
+import numpy as np
 from tensorflow.keras.preprocessing.image import load_img
 from tensorflow.keras.models import load_model
-import numpy as np
-import pickle
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 def get_model(path):
-	model = load_model(path, compile=False)
-	return model
+    model = load_model(path, compile=False)
+    return model
 
 def img_predict(path, crop):
-	data = load_img(path, target_size=(224, 224, 3))
-	data = np.asarray(data).reshape((-1, 224, 224, 3))
-	data = data * 1.0 / 255
-	if len(crop_diseases_classes[crop]) > 2:
-		predicted = np.argmax(get_model(f'./models/DL_models/{crop}_model.h5').predict(data)[0])
-	else:
-		p = get_model(f'./models/DL_models/{crop}_model.h5').predict(data)[0]
-		predicted = int(np.round(p)[0])
-	return predicted
+    data = load_img(path, target_size=(224, 224, 3))
+    data = np.asarray(data).reshape((-1, 224, 224, 3))
+    data = data * 1.0 / 255
+    model = get_model(os.path.join(BASE_DIR, 'models', 'DL_models', f'{crop}_model.h5'))
+    if len(crop_diseases_classes[crop]) > 2:
+        predicted = np.argmax(model.predict(data)[0])
+    else:
+        p = model.predict(data)[0]
+        predicted = int(np.round(p)[0])
+    return predicted
 
 def get_diseases_classes(crop, prediction):
-	crop_classes = crop_diseases_classes[crop]
-	return crop_classes[prediction][1].replace("_", " ")
+    crop_classes = crop_diseases_classes[crop]
+    return crop_classes[prediction][1].replace("_", " ")
 
 def get_crop_recommendation(item):
-	with open('./models/ML_models/crop_scaler.pkl', 'rb') as f:
-		crop_scaler = pickle.load(f)
-	with open('./models/ML_models/crop_model.pkl', 'rb') as f:
-		crop_model = pickle.load(f)
+    scaler_path = os.path.join(BASE_DIR, 'models', 'ML_models', 'crop_scaler.pkl')
+    model_path = os.path.join(BASE_DIR, 'models', 'ML_models', 'crop_model.pkl')
 
-	scaled_item = crop_scaler.transform(np.array(item).reshape(-1, len(item)))
-	prediction = crop_model.predict(scaled_item)[0]
-	return crops[prediction]
+    with open(scaler_path, 'rb') as f:
+        crop_scaler = pickle.load(f)
+    with open(model_path, 'rb') as f:
+        crop_model = pickle.load(f)
+
+    scaled_item = crop_scaler.transform(np.array(item).reshape(-1, len(item)))
+    prediction = crop_model.predict(scaled_item)[0]
+    return crops[prediction]
 
 def get_fertilizer_recommendation(num_features, cat_features):
-	with open('./models/ML_models/fertilizer_scaler.pkl', 'rb') as f:
-		fertilizer_scaler = pickle.load(f)
-	with open('./models/ML_models/fertilizer_model.pkl', 'rb') as f:
-		fertilizer_model = pickle.load(f)
+    scaler_path = os.path.join(BASE_DIR, 'models', 'ML_models', 'fertilizer_scaler.pkl')
+    model_path = os.path.join(BASE_DIR, 'models', 'ML_models', 'fertilizer_model.pkl')
+    
+    with open(scaler_path, 'rb') as f:
+        fertilizer_scaler = pickle.load(f)
+    with open(model_path, 'rb') as f:
+        fertilizer_model = pickle.load(f)
 
-	scaled_features = fertilizer_scaler.transform(np.array(num_features).reshape(-1, len(num_features)))
-	cat_features = np.array(cat_features).reshape(-1, len(cat_features))
-	item = np.concatenate([scaled_features, cat_features], axis=1)
-	prediction = fertilizer_model.predict(item)[0]
-	return fertilizer_classes[prediction]
-
-
-
+    scaled_features = fertilizer_scaler.transform(np.array(num_features).reshape(-1, len(num_features)))
+    cat_features = np.array(cat_features).reshape(-1, len(cat_features))
+    item = np.concatenate([scaled_features, cat_features], axis=1)
+    prediction = fertilizer_model.predict(item)[0]
+    return fertilizer_classes[prediction]
 
 crop_diseases_classes = {'strawberry': [(0, 'Leaf_scorch'), (1, 'healthy')],
 
